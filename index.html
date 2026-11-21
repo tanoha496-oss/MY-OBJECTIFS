@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes objectifs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Mes objectifs</h1>
+  <p class="sub" id="sub"></p>
+  <div class="strip" id="strip" aria-hidden="true"></div>
+  <div class="legend" id="legend"></div>
+  <div class="bar" id="filters"></div>
+  <div class="bar"><button class="chip" id="t-goals" aria-pressed="true">Objectifs</button><button class="chip" id="t-cal" aria-pressed="false">Calendrier</button><button class="chip" id="t-docs" aria-pressed="false">Documents</button><span class="sp"></span><button class="btn" id="new">Ajouter un objectif</button></div><input id="q" type="search" placeholder="Rechercher un objectif ou un fichier" aria-label="Rechercher" style="margin-bottom:14px">
+  <div id="list"></div>
+  <div class="tools">
+    <button class="btn ghost sm" id="exp">Exporter une sauvegarde</button>
+    <button class="btn ghost sm" id="imp">Restaurer une sauvegarde</button>
+    <input type="file" id="file" accept="application/json,.json" hidden><span class="meta" id="st">Enregistré sur cet appareil</span>
+  </div>
+</main>
+
+<dialog id="dlg">
+  <h2 id="dt">Nouvel objectif</h2>
+  <label for="f-title">Intitulé</label>
+  <input id="f-title" placeholder="Ex. : obtenir ma licence, apprendre Python…">
+  <div class="row">
+    <div><label for="f-cat">Type</label><select id="f-cat"></select></div>
+    <div><label for="f-start">Début</label><input id="f-start" type="date"></div><div><label for="f-due">Fin visée</label><input id="f-due" type="date"></div>
+  </div>
+  <label for="f-note">Notes</label>
+  <textarea id="f-note" rows="3" placeholder="Pourquoi, ressources, liens…"></textarea>
+  <div class="foot">
+    <button class="btn ghost" id="cancel">Annuler</button>
+    <button class="btn" id="save">Enregistrer</button>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script src="calendar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
