@@ -91,3 +91,4 @@ function renderDocs(){var q=($("q").value||"").toLowerCase(),rows=[];
   $("list").innerHTML=rows.map(function(r){var c=CATS[r.g.cat]||CATS.autre;return '<div class="goal" style="--cc:var('+c[1]+')"><div class="file">'+fileLink(r.f)+'<span class="meta">'+fmtSize(r.f.size)+'</span></div><div class="meta"><span class="k">'+c[0]+'</span> — '+esc(r.g.title)+(r.f.date?" — ajouté le "+fmt(r.f.date):"")+'</div></div>'}).join("")}
 function init(){assets=localAssets;$("st").textContent="Enregistré dans ce navigateur";render()}
 load();goals.forEach(norm);render();init();
+if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
